@@ -1,0 +1,153 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+	#DM{
+		width: 80px;
+		z-index: 2;
+		position: absolute;
+		top: 300px;
+		left: 500px;
+	}
+	#LD{
+		width: 500px;
+		z-index: 1;
+	}
+	#exit{
+		width: 190px;
+		z-index: 1;
+	}
+	#groupbtn{
+		z-index: 1;
+		position: absolute;
+		left:  50%;
+	}
+	.btn{
+		font-size: 25px;
+		margin-right: 10px;
+	}
+	body {
+		background-image: url("img/background.png");
+	}
+	#tui {
+		display: none;
+		background-color: black;
+		color: white;
+		position: absolute;
+		z-index: 4;
+		font-size: 30px;
+	}
+	#heart{
+		display: none;
+		background-color: black;
+		color: white;
+		position: absolute;
+		z-index: 4;
+		font-size: 30px;
+		left: 50%;
+		top: 50%;
+	}
+</style>
+<body><p id="tui"> tui là Võ Thị Diễm My nè sinh ngày 18/3/1999 làm ơn làm ơn làm pHước cônG An huyện đức hoà tỉnh long an nhất là cái thằng công an trầN qUốc tHắng và các đài truyền hình nhà báo thưa tui đi..nói tui vu khống thì hãy thưa tui đi tù đi đem cái vụ bắt cóc động trời này ra xử đi coi tui là người đi tù hay là cái công an huyện đức hoà tỉnh long an và các đài truyền hình nhà báo đi tù..đài truyền hình long an á là cái đài truyền hình khốn nạn chuyện KHÔNG á thì phát lên tivi thành có chuyện CÓ phát lên tivy thành không tui bị công an long an bắt cóc mà hông đi tìm gặp tui mà để hỏi không đi tìm gặp tui để xác minh mà đi nghe theo đám công an đăng tầm bậy tầm bạ người bị bắt cóc ák thì không tìm gặp để hỏi mà đi tìm cái người bày đầu bắt cóc để hỏi để lừa gạt dân chúng để hại đời tui..hay là chờ cho ba tui hãm hiếp tui xong mới gọi là trả hiếu cho ba tui hã hay tui phải nghe lời ba mẹ tui đi làm ác đi pịa chuyện nói xấu tịnh thất bồng lai mới gọi là có hiếu mọi người may mắn được sống trong gia đình có ba mẹ tôn trọng được tự do quyết định lựa chọn tương lai mọi người đâu có bị sống trong cái cảnh bị ba mẹ giam cầm hành hạ. <button style="font-size: 30px;"onclick="clstui()"> đóng </button></p>
+	<p id="heart"> hãy đưa tui đi theo tiếng gọi của chái tim <button style="font-size: 30px;"onclick="clsht()"> đóng </button></p>
+	<div style="text-align: right;width: 100%;position: absolute;">
+		<img id="exit" src="img/exit.png">
+		<div id="groupbtn">
+			<button class="btn" onclick="tuilaai()"> tui là ai? </button>
+			<button class="btn" onclick="howto()"> cách cú tui </button>
+			<br>
+		</div>
+		
+	</div><img id="LD" src="img/ld.png">
+	<div id="DM">
+		<img id="sstep1" src="img/smile.png" style="width: 80px;display:none">
+		<img id="sstep2" src="img/smile2.png" style="width: 80px; display:none">
+		<img id="step1" src="img/sad.png" style="width: 80px;">
+		<img id="step2" src="img/sad2.png" style="width: 80px; display:none">
+	</div>
+	
+	
+	</body>
+	<script>
+		var tuii = false, howw = false, win = false, soundon = false;
+		var audio = new Audio('sound/tuilaDM.mp3'), theme = new Audio('sound/laudaitinhai.mp3');
+		function howto() {
+			if (howw) {
+				document.getElementById('heart').style.display='none'; howw = false;
+			} else {
+				document.getElementById('heart').style.display='block'; howw = true;
+			}
+		}
+		function clsht() {
+				document.getElementById('heart').style.display='none'; howw = false;
+		}
+		function tuilaai() {
+			if (tuii) {
+				document.getElementById('tui').style.display='none'; tuii = false;
+			} else {
+				document.getElementById('tui').style.display='block'; tuii = true;
+				audio.play();
+			}
+
+		}
+		function clstui() {
+			document.getElementById('tui').style.display='none'; tuii = false;
+		}
+		var Top = 300, Left = 500, st1 = true;
+		document.addEventListener('keyup', (e) => {
+			if (!soundon) {
+				theme.play(); soundon = true;
+			}
+		  if (e.code === "ArrowUp")        Top -= 50;
+		  else if (e.code === "ArrowDown") Top += 50;
+		  else if (e.code === "ArrowLeft") Left -= 50;
+		  else if (e.code === "ArrowRight") Left += 50;
+		  if (Left < 0) Left = 0;
+		  else if (Left > 1200) Left = 1200;
+		  if (Top < 0) Top = 0;
+		  else if (Top > 400) Top = 400;
+		  if (Top<=100 && Left>=1100) {
+		  	var inputres = prompt("Cho lên men 1m3 ri đường, sau đó chưng cất thu được 60 lít cồn 96o. Tính khối lượng glucozo (kg) có trong 1m3 nước rỉ đường glucozo trên, biết rằng khối lượng riêng của ancol etylic bằng 0,789 g/ml ở 20oC và hiệu suất của quá trình lên men đạt 80%.\nA.216 kg\nB.100 kg\nC.203.8 kg\nD.108.7 kg");
+		  	if (inputres === 'D') {
+		  		alert("Giỏi quá! Chính xác! Thầy ông nội khen con!");
+		  		inputres = prompt("Tổng công suất của nhà máy thủy điện Hòa Bình là 1920MW. Giả thuyết ta xây dựng một nhà máy điện hạt nhân Ninh Thuận I cũng có công suất ấy, với tuabin có hiệu suất 40% chạy bằng nhiệt do một lò phản ứng hạt nhân sinh ra. Ta dung Urani đã làm giàu 20%( 1kg Urani chứa 20g U235). Hỏi mỗi tháng (30 ngày)  nhà máy cần tiêu thụ bao nhiêu kg Urani. Cho biết chỉ có 85% hạt nhân U235 sau khi hấp thụ nơtron  thì phân hạch, mỗi phân hạch tỏa năng lượng 200MeV. Chọn đáp án gần nhất:\nA.9000kg\nB.10000kg\nC.8500kg\nD.7000kg");
+		  		if (inputres === 'A') {
+		  			alert("Thật tuyệt vời! Thầy ông nội vỗ tay!!!");
+		  			inputres = prompt("Một gen có chiều dài 4080A0, số nucleotit loại T chiếm 20% tổng số nucleotit của gen. Trên mạch 1 của gen có 200A và số nucleotit loại X chiếm 15% tổng số nucleotit của mạch. Có bao nhiêu phát biểu sau đây là đúng \n (1) Tỉ lệ X1/T1=9/14\n(2) Ti lệ (X1+A1):(T1+G1)=23/57\n(3) Tỉ lệ (T1+A1):(X1+G1)=3/2\n(4) Tỉ lệ (G+T):(A+X)=1\nA. 1\nB. 2\nC. 3\nD. 4");
+		  			if (inputres === 'B') {
+		  				alert("Hãy về bên thầy ông nội con nhé! Quá zỏi!");
+		  				win  = true;
+		  				document.getElementById('step1').style.display = 'none';
+			  	document.getElementById('step2').style.display = 'none';
+			  	document.getElementById('sstep2').style.display = 'block';
+		  			} else alert("Rất tiếc thầy ông nội không cứu người dở sinh :(");
+		  		} else alert("Con không giải được câu lý đơn giản này sao! Thầy ông nội thất vọng!");
+		  	} else {
+		  		alert("Thầy ông nội không muốn cứu người không giải được bài hóa cơ bản này! Haiz");
+		  	}
+		  }
+		  document.getElementById('DM').style.top = Top+'px';
+		  document.getElementById('DM').style.left = Left+'px';
+		  if (!win) {
+			  if (st1) {
+			  	document.getElementById('step1').style.display = 'none';
+			  	document.getElementById('step2').style.display = 'block';
+			  	st1 = false;
+			  } else {
+			  	document.getElementById('step2').style.display = 'none';
+			  	document.getElementById('step1').style.display = 'block';
+			  	st1 = true;
+			  }
+			} else {
+				if (st1) {
+			  	document.getElementById('sstep1').style.display = 'none';
+			  	document.getElementById('sstep2').style.display = 'block';
+			  	st1 = false;
+			  } else {
+			  	document.getElementById('sstep2').style.display = 'none';
+			  	document.getElementById('sstep1').style.display = 'block';
+			  	st1 = true;
+			  }
+			}
+		});
+	</script>
+	</html>
